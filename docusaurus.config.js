@@ -89,6 +89,10 @@ const config = {
                             {
                                 href: "/tools/vehicle-search",
                                 label: "Vehicle Search"
+                            },
+                            {
+                                href: "/tools/courts-search",
+                                label: "Magistrates Court Search"
                             }
                         ]
                     },

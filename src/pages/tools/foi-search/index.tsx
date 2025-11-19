@@ -415,11 +415,11 @@ export default function FoiSearchPage(): JSX.Element {
                     </div>
                 </div>
             </div>
-            {/* <div className={styles.disclaimer}>
+            <div className={styles.disclaimer}>
                 <div className={"container container-fluid margin-vert--lg"}>
-                    To access this data programatically, please see <a href="/docs/endpoints/foi-requests/search">the documentation</a>.
+                    To access this data programatically, please see <a href="/docs/endpoints/foi-requests">the documentation</a>.
                 </div>
-            </div> */}
+            </div>
         </Layout>
     )
 }

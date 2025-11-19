@@ -29,3 +29,30 @@
     color: white;
     text-align: center;
 }
+
+.departuresTitle {
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.departuresError {
+    font-size: 14px;
+}
+
+.departuresTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.departuresTable th,
+.departuresTable td {
+    padding: 2px 12px; 
+    text-align: left;
+}
+
+.departuresTable th {
+    font-weight: bold;
+}
