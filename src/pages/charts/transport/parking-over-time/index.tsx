@@ -83,7 +83,7 @@ function ParkingChartsContent() {
 
     async function fetchData() {
         try {
-            const response = await fetch(`${config.apiUrl}/v1/carparks/spaces?date=${selectedDate}`);
+            const response = await fetch(`${config.apiUrl}/v1/carparks/spaces/dates/${selectedDate}`);
             setState(ChartState.Loaded);
             setData((await response.json()).results.reverse());
         } catch (e) {
@@ -161,7 +161,7 @@ function ParkingChartsContent() {
                 Available parking spaces in multi storey carparks, displayed over time. The information is updated roughly every 5 minutes.
             </p>
             <p>
-                To access this information programmatically, please see the <a href="/docs/endpoints/charts/parking-over-time">documentation</a>.
+                To access this information programmatically, please see the <a href="/docs/endpoints/carparks/parking-spaces/all-info-for-date">documentation</a>.
             </p>
 
             {/* Before 3rd October 2025, there is some spotiness in the data collection due to issues on the backend. This has been resolved. */}

@@ -5,6 +5,7 @@ import FormGroup from "@site/src/components/ui/FormGroup";
 import clsx from "clsx";
 import config from "../../../config.json";
 import Input from "@site/src/components/ui/Input";
+import Button from "@site/src/components/ui/Button";
 
 export default function Login(): JSX.Element {
     const [email, setEmail] = useState("");
@@ -37,35 +38,36 @@ export default function Login(): JSX.Element {
 
     return (
         <Layout title="Login">
-            <div className="container" style={{ display: "flex", justifyContent: "center", marginTop: "50px" }}>
-                <div className={styles.authCard}>
-                    <h2 className={styles.title}>Login</h2>
+            <div className="container" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "50px" }}>
+                    <div className={styles.authCard}>
+                        <h2 className={styles.title}>Login</h2>
 
-                    <FormGroup label="Email">
-                        <Input
-                            type="email"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            required
-                        />
-                    </FormGroup>
+                        <FormGroup label="Email">
+                            <Input
+                                type="email"
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                required
+                            />
+                        </FormGroup>
 
-                    <FormGroup label="Password">
-                        <Input
-                            type="password"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            required
-                        />
-                    </FormGroup>
+                        <FormGroup label="Password">
+                            <Input
+                                type="password"
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                required
+                            />
+                        </FormGroup>
 
-                    <button
-                        className={clsx("btn btn-primary", styles.loginButton)}
-                        onClick={() => login()}
-                    >
-                        Login
-                    </button>
-                </div>
+                        <Button
+                            className={styles.loginButton}
+                            onClick={() => login()}
+                        >
+                            Login
+                        </Button>
+                    </div>
+                    <p className={styles.regNotSetUp}>Account registration is not yet set up, please get in touch <a href="mailto:luke@glitch.je">via email</a> or <a href="https://linkedin.com/in/lukejwyatt">via LinkedIn</a> to request an account.</p>
             </div>
         </Layout>
     );

@@ -1,23 +1,27 @@
 :root {
-    --req-bg-color: #f9f7f7;
-    --req-author-color: #4e4e4e;
-    --req-date-bg-color: #ececec;
-    --req-border-bottom-color: #ececec;
-    --modal-bg-color: white;
+    --court-item-bg-color: #f9f7f7;
+    --court-item-author-color: #4e4e4e;
+    --court-item-date-bg-color: #ececec;
+    --court-item-border-bottom-color: #ececec;
+    --court-modal-bg-color: white;
+    --court-tab-bg-color: #ececec;
+    --court-tab-hover-bg-color: #dad8d8;
 }
 
 [data-theme="dark"] {
-    --req-bg-color: #323232;
-    --req-author-color: #aeabab;
-    --req-date-bg-color: #434343;
-    --req-border-bottom-color: #898787;
-    --modal-bg-color: rgb(45, 43, 43);
+    --court-item-bg-color: #323232;
+    --court-item-author-color: #aeabab;
+    --court-item-date-bg-color: #434343;
+    --court-item-border-bottom-color: #898787;
+    --court-modal-bg-color: rgb(45, 43, 43);
+    --court-tab-bg-color: #4e4d4d;
+    --court-tab-hover-bg-color: #626060;
 }
 
 .header {
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    background-color: var(--purple);
+    background-color: var(--header);
     color: white;
 }
 
@@ -66,7 +70,7 @@
 }
 
 .result:hover {
-    background-color: var(--req-bg-color);
+    background-color: var(--court-item-bg-color);
 }
 
 .resDefendant {
@@ -74,7 +78,7 @@
 }
 
 .resDate {
-    background-color: var(--req-date-bg-color);
+    background-color: var(--court-item-date-bg-color);
     padding: 1px 10px;
     font-size: 14px;
     border-radius: 8px;
@@ -88,7 +92,7 @@
 }
 
 .result:not(:last-child) {
-    border-bottom: 1px solid var(--req-border-bottom-color);
+    border-bottom: 1px solid var(--court-item-border-bottom-color);
 }
 
 .pagination {
@@ -98,7 +102,7 @@
 }
 
 .activePage {
-    background-color: var(--ifm-color-primary);
+    background-color: var(--header);
     color: white;
 }
 
@@ -137,7 +141,7 @@
 }
 
 .modalContent {
-    background: var(--modal-bg-color);
+    background: var(--court-modal-bg-color);
     padding: 20px;
     border-radius: 8px;
     max-width: 600px;
@@ -186,23 +190,23 @@
 .tab {
     background: none;
     border: none;
-    background-color: #ececec;
+    background-color: var(--court-tab-bg-color);
     font-size: 22px;
     padding: 5px 15px;
 }
 
 .tab:hover {
-    background-color: #dad8d8;
+    background-color: var(--court-tab-hover-bg-color);
     cursor: pointer;
 }
 
 .activeTab {
-    background-color: var(--purple);
+    background-color: var(--blue-lighter);
     color: white;
 }
 
 .activeTab:hover {
-    background-color: purple;
+    background-color: var(--blue);
 }
 
 @media screen and (max-width: 768px) {

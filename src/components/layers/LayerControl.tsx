@@ -23,7 +23,7 @@ interface LayerControlProps {
 
 export default function LayerControl(props: LayerControlProps) {
     return (
-        <div style={{ borderBottom: "1px solid #ececec", paddingTop: "15px" }}>
+        <div className={styles.layerControl}>
             <label className={styles.checkboxGroup}>
                 {props.label}
                 <input type="checkbox" checked={props.isVisible} onChange={props.toggleVisibility} />

@@ -1,0 +1,85 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ExampleMap from "@site/src/components/maps/ExampleMap";
+import { mapItems } from "@site/src/mapUtils";
+
+# Bus Stop Info & Departures
+
+Returns information about the specified Bus Stop and a list of upcoming departures.
+
+```jsx
+GET /v1/bus/stops/{stopNumber}
+```
+
+### Response
+<Tabs>
+<TabItem value="res-sample-200" label="200 (OK)">
+
+This is a sample response.
+
+```json title="Status: 200 (OK)"
+{
+  "results": {
+    "id": "001bcd85-b0ed-4c01-91f6-71360e10c4eb",
+    "name": "Rue Des Vignes E",
+    "stopNumber": "4362",
+    "latitude": 49.20619345,
+    "longitude": -2.17884485,
+    "shelter": false,
+    "departures": [
+      {
+        "destination": "St Helier",
+        "eta": "2025-11-19T19:00:18.7829514+00:00",
+        "serviceNumber": "22",
+        "stopNumber": 4362
+      },
+      {
+        "destination": "Greve de Lecq",
+        "eta": "2025-11-19T19:10:18.7829514+00:00",
+        "serviceNumber": "9",
+        "stopNumber": 4362
+      }
+    ]
+  }
+}
+```
+
+</TabItem>
+<TabItem value="res-schema" label="Schema">
+
+#### Root
+| Key | Type | Description |
+|-----|------|-------------|
+|`results`|Array|Array of `BusStop`s. See example response.|
+
+#### BusStop
+| Key | Type | Description |
+|-----|------|-------------|
+|`id`|UUID|A unique ID to represent this bus stop|
+|`name`|String|The bus stop name|
+|`stopNumber`|String|The 4-digit code that uniquely represents this bus stop|
+|`latitude`|Number|The latitude of the bus stop|
+|`longitude`|Number|The longitude of the bus stop|
+|`shelter`|Boolean|True if the bus stop has a shelter, otherwise false|
+|`departures`|array|An array of `Departure`s. See below.|
+
+#### Departure
+| Key | Type | Description |
+|-----|------|-------------|
+|`destination`|String|The destination of the bus (e.g. "St Helier")|
+|`eta`|String (ISO 8601 datetime)|The estimated time of arrival at the stop|
+|`serviceNumber`|String|The bus service number|
+|`stopNumber`|Number|The stop number|
+
+</TabItem>
+</Tabs>
+
+### Example Map View
+Here is an example of using the data to display all bus stops on a map. Click on a <img src="/img/maps/bus-stop.png" height="15" width="15" /> icon to display any upcoming departures.
+
+<ExampleMap item={mapItems.busStop} />
+
+#### Legend
+
+* Blue - Bus Stop (No Shelter)
+* Yellow - Bus Stop (With Shelter)

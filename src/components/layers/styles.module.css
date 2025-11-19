@@ -1,11 +1,18 @@
 :root {
-    --checkmark-bg-color: #eee;
-    --checkmark-bg-hover-color: #ccc;
+    --layer-checkmark-bg-color: #eee;
+    --layer-checkmark-bg-hover-color: #ccc;
+    --layer-border-bottom-color: #f0eded;
 }
 
 [data-theme="dark"] {
-    --checkmark-bg-color: #737171;
-    --checkmark-bg-hover-color: rgb(148, 147, 147);
+    --layer-checkmark-bg-color: #555454;
+    --layer-checkmark-bg-hover-color: rgb(111, 111, 111);
+    --layer-border-bottom-color: #444343;
+}
+
+.layerControl {
+    padding-top: 15px;
+    border-bottom: 1px solid var(--layer-border-bottom-color);
 }
 
 .subOptions {
@@ -72,15 +79,15 @@
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: var(--checkmark-bg-color);
+    background-color: var(--layer-checkmark-bg-color);
 }
 
 .checkboxGroup:hover input~.checkmark {
-    background-color: var(--checkmark-bg-hover-color);
+    background-color: var(--layer-checkmark-bg-hover-color);
 }
 
 .checkboxGroup input:checked~.checkmark {
-    background-color: var(--purple);
+    background-color: var(--ifm-color-primary);
 }
 
 .checkmark:after {

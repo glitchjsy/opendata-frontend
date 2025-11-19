@@ -1,16 +1,16 @@
 :root {
-    --border-color: #e4e4e4;
-    --stripe-color: #fbe3fa;
+    --court-res-card-border-color: #e4e4e4;
+    --court-res-card-stripe-color: #fbe3fa;
 }
 
 [data-theme="dark"] {
-    --border-color: #5e5e5e;
-    --stripe-color: #36204b;
+    --court-res-card-border-color: #3a3a3a;
+    --court-res-card-stripe-color: #36204b;
 }
 
 .result {
     border-radius: 10px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--court-res-card-border-color);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     cursor: pointer;
@@ -18,7 +18,7 @@
 
 .title {
     padding: 5px 20px;
-    background-color: #656ab3;
+    background-color: var(--blue-lighter);
     color: white;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .bodyExpanded {
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--court-res-card-border-color);
     padding: 0;
 }
 
@@ -72,11 +72,11 @@
 }
 
 .striped {
-    background-color: var(--stripe-color);
+    background-color: var(--court-res-card-stripe-color);
 }
 
 .meta {
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--court-res-card-border-color);
     padding: 12px 20px;
     font-size: 14px;
 }

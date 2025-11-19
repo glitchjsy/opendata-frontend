@@ -1,0 +1,43 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Dates With Space Data Available
+
+Returns a list of dates when parking space information was collected. This can be used to populate a date picker.
+
+To make use of one of the dates returned, see [Fetch all space info for date](/docs/endpoints/carparks/parking-spaces/all-info-for-date).
+
+```
+GET /v1/carparks/spaces/dates
+```
+
+### Response
+<Tabs>
+<TabItem value="res-sample-200" label="200 (OK)">
+
+This is a sample response.
+
+```json title="Status: 200 (OK)"
+{
+    "results": [
+      "2025-09-25",
+      "2025-09-24",
+      "2025-09-23",
+      "2025-09-22",
+      "2025-09-21",
+      "2025-09-20",
+      "2025-09-19"
+    ]
+}
+```
+
+</TabItem>
+
+</Tabs>
+
+### Sources
+|Source|
+|------|
+|[Parking Spaces API][livespacesapi]|
+
+[livespacesapi]: http://sojpublicdata.blob.core.windows.net/sojpublicdata/carpark-data.json

@@ -1,23 +1,23 @@
 :root {
-    --req-bg-color: #f9f7f7;
-    --req-author-color: #4e4e4e;
-    --req-date-bg-color: #ececec;
-    --req-border-bottom-color: #ececec;
+    --foi-req-bg-color: #f9f7f7;
+    --foi-req-author-color: #4e4e4e;
+    --foi-req-date-bg-color: #ececec;
+    --foi-req-border-bottom-color: #ececec;
     --modal-bg-color: white;
 }
 
 [data-theme="dark"] {
-    --req-bg-color: #323232;
-    --req-author-color: #aeabab;
-    --req-date-bg-color: #434343;
-    --req-border-bottom-color: #898787;
+    --foi-req-bg-color: #323232;
+    --foi-req-author-color: #aeabab;
+    --foi-req-date-bg-color: #313131;
+    --foi-req-border-bottom-color: #4a4949;
     --modal-bg-color: rgb(45, 43, 43);
 }
 
 .header {
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    background-color: var(--purple);
+    background-color: var(--header);
     color: white;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .request:hover {
-    background-color: var(--req-bg-color);
+    background-color: var(--foi-req-bg-color);
 }
 
 .requestCompact {
@@ -87,11 +87,11 @@
 
 .reqAuthor {
     font-size: 14px;
-    color: var(--req-author-color);
+    color: var(--foi-req-author-color);
 }
 
 .reqDate {
-    background-color: var(--req-date-bg-color);
+    background-color: var(--foi-req-date-bg-color);
     padding: 1px 10px;
     font-size: 14px;
     border-radius: 8px;
@@ -101,7 +101,7 @@
 
 .reqDate>span {
     font-weight: 600;
-    color: var(--ifm-color-primary);
+    color: var(--blue-text);
 }
 
 .reqDateCompact {
@@ -110,7 +110,7 @@
 }
 
 .request:not(:last-child) {
-    border-bottom: 1px solid var(--req-border-bottom-color);
+    border-bottom: 1px solid var(--foi-req-border-bottom-color);
 }
 
 .pagination {
@@ -120,7 +120,7 @@
 }
 
 .activePage {
-    background-color: var(--ifm-color-primary);
+    background-color: var(--header);
     color: white;
 }
 

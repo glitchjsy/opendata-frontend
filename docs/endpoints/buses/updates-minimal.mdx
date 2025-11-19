@@ -1,0 +1,77 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ExampleMap from "@site/src/components/maps/ExampleMap";
+import { mapItems } from "@site/src/mapUtils";
+
+# Bus Live Updates (Minimal)
+
+Returns minimal information about the specified Bus Stop and a list of upcoming departures.
+
+```jsx
+GET /v1/bus/live-updates-minimal
+```
+
+### Query Parameters (optional)
+| Name | Description | Type | Additional Information |
+|------|-------------|------|-----------------------|
+| `secondsAgo` | The number of seconds to look back for updates | Integer | Optional. Defaults to `5000`. |
+
+### Response
+<Tabs>
+<TabItem value="res-sample-200" label="200 (OK)">
+
+This is a sample response.
+
+```json title="Status: 200 (OK)"
+{
+ 
+  "results": [
+    {
+      "bus": "bus-1-1315-J122010",
+      "line": "3",
+      "category": "Public Bus",
+      "latitude": 49.1835115,
+      "longitude": -2.1104001,
+      "bearing": 0,
+      "direction": "outbound",
+      "time": "19:04:24",
+      "age": 22
+    },
+    {
+      "bus": "bus-12-1335-J122020",
+      "line": "12A",
+      "category": "Public Bus",
+      "latitude": 49.1879307,
+      "longitude": -2.1166704,
+      "bearing": 150,
+      "direction": "inbound",
+      "time": "19:04:08",
+      "age": 38
+    }
+  ]
+}
+```
+
+</TabItem>
+<TabItem value="res-schema" label="Schema">
+
+#### Root
+| Key | Type | Description |
+|-----|------|-------------|
+|`results`|Array|Array of `Update`s. See below.|
+
+### Update
+| Key | Type | Description |
+|-----|------|-------------|
+| `bus` | String | Unique identifier for the bus. |
+| `line` | String |The bus service number, found on the LibertyBus timetable. |
+| `category` | String | Type of vehicle (`Public Bus`, `School Bus`). |
+| `latitude` | Decimal number | Current latitude of the bus. |
+| `longitude` | Decimal number | Current longitude of the bus. |
+| `bearing` | Integer | Compass bearing of the bus in degrees (0–359). |
+| `direction` | String | Direction of the bus (`"inbound"` or `"outbound"`). |
+| `time` | String (HH:MM:SS) | Local time when this position was recorded. |
+| `age` | Integer | How many seconds ago this position was recorded. |
+
+</TabItem>
+</Tabs>

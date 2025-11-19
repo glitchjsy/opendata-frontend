@@ -1,0 +1,94 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+# Fetch all space info for date
+
+Returns a list of all space information collected for a specific date, this can populate a chart.
+
+```
+GET /v1/carparks/spaces/dates/{date}
+```
+
+### Parameters
+| Name | Description |
+|------|-------------|
+| `date` | The date to return all space usage information for. To find valid dates, see [this endpoint](/docs/endpoints/carparks/parking-spaces/list-dates). |
+
+:::info NOTE
+To retrieve current LIVE parking space totals, see [this endpoint](/docs/endpoints/carparks/parking-spaces).
+:::
+
+### Response
+<Tabs>
+<TabItem value="res-sample-200" label="200 (OK)">
+
+This is a sample response.
+
+```json title="Status: 200 (OK)"
+{
+  "results": [
+    {
+      "id": "476835",
+      "createdAt": "2025-11-18T23:59:57.000Z",
+      "name": "Green Street",
+      "code": "GREENST",
+      "spaces": 343,
+      "status": "good",
+      "open": true
+    },
+    {
+      "id": "476836",
+      "createdAt": "2025-11-18T23:59:57.000Z",
+      "name": "Minden Place",
+      "code": "MINDENPL",
+      "spaces": 56,
+      "status": "good",
+      "open": true
+    },
+    {
+      "id": "476837",
+      "createdAt": "2025-11-18T23:59:57.000Z",
+      "name": "Patriotic Street",
+      "code": "PATRIOTICST",
+      "spaces": 423,
+      "status": "good",
+      "open": true
+    }
+  ]
+}
+```
+
+</TabItem>
+
+<TabItem value="res-schema" label="Schema">
+
+#### Root
+| Key | Type | Description |
+|-----|------|-------------|
+|`results`|Array|An array of `Entry`s|
+
+#### Entry
+| Key | Type | Description |
+|-----|------|-------------|
+|`createdAt`|String|The date/time spaces for this carpark entry were fetched and stored in the database|
+|`name`|String|The human readable name of the carpark|
+|`code`|String|A unique code to identify the carpark|
+|`spaces`|Number|The number of empty spaces currently available|
+|`status`|String|__TODO__|
+|`open`|Boolean|`true` if the carpark is open, otherwise `false`|
+
+</TabItem>
+</Tabs>
+
+---
+
+<h3><a href="/charts/transport/parking-over-time">Click here to see it in action</a></h3>
+
+---
+
+### Sources
+|Source|
+|------|
+|[Parking Spaces API][livespacesapi]|
+
+[livespacesapi]: http://sojpublicdata.blob.core.windows.net/sojpublicdata/carpark-data.json

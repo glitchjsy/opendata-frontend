@@ -34,7 +34,7 @@
 }
 
 .switch > input:checked + .slider {
-  background-color: var(--purple);
+  background-color: var(--blue);
 }
 
 .switch > input:checked + .slider:before {

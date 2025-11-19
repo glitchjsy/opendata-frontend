@@ -18,7 +18,7 @@
 
 .author[data-theme="dark"] {
     color: white;
-    background-color: #3b3b3b;
+    background-color: #393939;
 }
 
 .author p {
@@ -27,12 +27,8 @@
 }
 
 .author a {
-    color: rgb(7, 107, 107);
+    color: var(--blue-text);
     font-size: 14px;
-}
-
-.author a[data-theme="dark"] {
-    color: rgb(13, 223, 223);
 }
 
 .active a {

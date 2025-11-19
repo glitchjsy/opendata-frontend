@@ -17,13 +17,22 @@
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
     --purple: rgb(169, 42, 219);
-    --blue: #31356e;
+    --blue: #383c7a;
+    --blue-lighter: #5055a4;
+    --blue-text: #2e5f99;
     --ifm-color-primary: var(--purple);
+
+    --header: var(--blue);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-    --ifm-color-primary: #25c2a0;
+[data-theme="dark"] {
+    --purple: rgb(207, 124, 239);
+    --blue: #464b8a;
+    --blue-lighter: #4c5198;
+    --blue-text: #6be5e8;
+
+    --ifm-color-primary: var(--purple);
     --ifm-color-primary-dark: #21af90;
     --ifm-color-primary-darker: #1fa588;
     --ifm-color-primary-darkest: #1a8870;
@@ -31,8 +40,6 @@
     --ifm-color-primary-lighter: #32d8b4;
     --ifm-color-primary-lightest: #4fddbf;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-
-    --ifm-color-primary: rgb(210, 131, 241);
 }
 
 .btn {

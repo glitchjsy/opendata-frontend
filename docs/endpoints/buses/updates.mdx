@@ -1,0 +1,88 @@
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import ExampleMap from "@site/src/components/maps/ExampleMap";
+import { mapItems } from "@site/src/mapUtils";
+
+# Bus Live Updates
+
+Returns information about the specified Bus Stop and a list of upcoming departures.
+
+```jsx
+GET /v1/bus/live-updates
+```
+
+### Query Parameters (optional)
+| Name | Description | Type | Additional Information |
+|------|-------------|------|-----------------------|
+| `secondsAgo` | The number of seconds to look back for updates | Integer | Optional. Defaults to `5000`. |
+
+### Response
+<Tabs>
+<TabItem value="res-sample-200" label="200 (OK)">
+
+This is a sample response.
+
+```json title="Status: 200 (OK)"
+{
+  "results": [
+    {
+      "deviceId": "bus-1-1145-J122023",
+      "assetType": "Public Bus",
+      "registration": "J122023",
+      "serviceNumber": "8",
+      "serviceName": "8",
+      "serviceOperator": "LibertyBus",
+      "originalStartTime": "2025-11-19T18:40:00",
+      "timeOfUpdate": "2025-11-19T18:59:16",
+      "direction": "inbound",
+      "latitude": 49.1992872,
+      "longitude": -2.1482804,
+      "bearing": 141,
+      "secondsAgo": 56
+    },
+    {
+      "deviceId": "bus-1-1315-J122010",
+      "assetType": "Public Bus",
+      "registration": "J122010",
+      "serviceNumber": "3",
+      "serviceName": "3",
+      "serviceOperator": "LibertyBus",
+      "originalStartTime": "2025-11-19T19:15:00",
+      "timeOfUpdate": "2025-11-19T18:59:22",
+      "direction": "outbound",
+      "latitude": 49.1834621,
+      "longitude": -2.1103304,
+      "bearing": 0,
+      "secondsAgo": 50
+    }
+  ]
+}
+```
+
+</TabItem>
+<TabItem value="res-schema" label="Schema">
+
+#### Root
+| Key | Type | Description |
+|-----|------|-------------|
+|`results`|Array|Array of `Update`s. See below.|
+
+### Update
+| Key | Type | Description |
+|-----|------|-------------|
+| `deviceId` | String | Unique identifier for the bus. |
+| `assetType` | String | Type of vehicle (`Public Bus`, `School Bus`)|
+| `registration` | String | The bus registration number (number plate). |
+| `serviceNumber` | String | The bus service number, found on the LibertyBus timetable. |
+| `serviceName` | String | The name of the bus service (usually same as service number). |
+| `serviceOperator` | String | The operator or company running the service. |
+| `originalStartTime` | String (ISO 8601 datetime) | The scheduled start time of the service. |
+| `timeOfUpdate` | String (ISO 8601 datetime) | Timestamp when this update was recorded. |
+| `direction` | String | Direction of the bus (`"outbound"` or `"inbound"`). |
+| `latitude` | Decimal number | Current latitude of the bus. |
+| `longitude` | Decimal number | Current longitude of the bus. |
+| `bearing` | Integer | The compass bearing of the bus in degrees (0–359). |
+| `secondsAgo` | Integer | How many seconds ago this position was recorded. |
+
+</TabItem>
+</Tabs>

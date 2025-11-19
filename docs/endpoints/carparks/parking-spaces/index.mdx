@@ -5,20 +5,18 @@ import TabItem from "@theme/TabItem";
 
 Returns live information about currently available parking spaces in certain multi-storey carparks.
 
-This data is provided by the Government. See a working example: https://www.gov.je/Travel/Motoring/Parking/pages/carparkspaces.aspx
-
 ```
 GET /v1/carparks/spaces
 ```
-
-:::info NOTE
-To retrieve parking numbers for a specific day and display in a chart, see [Parking Spaces Over Time](/docs/endpoints/charts/parking-over-time).
-:::
 
 ### Query Parameters (optional)
 |Param|Desription|
 |-----|----------|
 |`includeCarparkInfo`|If set to `true` then full Carpark info will be included with the response (see [Carparks schema](/docs/endpoints/carparks))|
+
+:::info NOTE
+To retrieve parking numbers for a specific day and display in a chart, see [this endpoint](/docs/endpoints/carparks/parking-spaces/all-info-for-date).
+:::
 
 ### Response
 <Tabs>
@@ -105,6 +103,12 @@ This is a sample response. See [Carparks schema](/docs/endpoints/carparks) for `
 
 </TabItem>
 </Tabs>
+
+---
+
+<h3><a href="https://www.gov.je/Travel/Motoring/Parking/pages/carparkspaces.aspx">Click here to see it in action</a></h3>
+
+---
 
 ### Sources
 |Source|

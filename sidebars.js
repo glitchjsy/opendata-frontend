@@ -37,7 +37,15 @@ const sidebars = {
           items: [
             "endpoints/carparks/index",
             "endpoints/carparks/lookup",
-            "endpoints/carparks/parking-spaces"
+            {
+              type: "category",
+              label: "Parking Spaces",
+              items: [
+                "endpoints/carparks/parking-spaces/index",
+                "endpoints/carparks/parking-spaces/list-dates",
+                "endpoints/carparks/parking-spaces/all-info-for-date"
+              ]
+            }
           ]
         },
         {
@@ -56,13 +64,15 @@ const sidebars = {
           label: "Buses",
           items: [
             "endpoints/buses/stops",
+            "endpoints/buses/stop-info",
+            "endpoints/buses/updates",
+            "endpoints/buses/updates-minimal"
           ]
         },
         {
           type: "category",
           label: "Charts",
           items: [
-            "endpoints/charts/parking-over-time",
             "endpoints/charts/bus-passengers",
             "endpoints/charts/driving-test-results",
             "endpoints/charts/monthly-rainfall",

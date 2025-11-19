@@ -225,9 +225,12 @@ export default function CourtSearchPage(): JSX.Element {
                             <h2>{activeTab === "hearings" ? "Hearings" : "Results"}</h2>
 
                             {results.length > 0 && (
+                                <>
                                 <p>
                                     Showing {results.length} of {totalResults} results
                                 </p>
+                                {activeTab === "results" && <p style={{ color: "var(--purple)", fontWeight: "bold" }}>Click an entry to view additional information</p>}
+                                </>
                             )}
 
                             <div className={styles.results}>

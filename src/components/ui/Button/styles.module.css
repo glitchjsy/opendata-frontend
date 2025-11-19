@@ -1,6 +1,6 @@
 :root {
-    --btn-primary-bg: var(--purple);
-    --btn-primary-hover-bg: #871eb1;
+    --btn-primary-bg: var(--blue-lighter);
+    --btn-primary-hover-bg: var(--blue);
     --btn-primary-color: #ffffff;
 
     --btn-secondary-bg: #eaeaea;

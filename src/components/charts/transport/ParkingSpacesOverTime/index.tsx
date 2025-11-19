@@ -57,7 +57,7 @@ export default function ParkingSpacesOverTime(props: Props) {
     const fetchData = async () => {
         setFailedLoadingSpaces(false);
         try {
-            const response = await fetch(`https://api.opendata.je/v1/carparks/spaces?date=${selectedDate}`);
+            const response = await fetch(`https://api.opendata.je/v1/carparks/spaces/dates/${selectedDate}`);
             setData(((await response.json()).results).reverse());
         } catch (e) {
             console.error("Error fetching carpark spaces:", e);
