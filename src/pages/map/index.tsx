@@ -27,6 +27,8 @@ export default function MapPage(): JSX.Element {
         type: MapItemType;
     } | null>(null);
 
+    const [drawerOpen, setDrawerOpen] = useState(false);
+
     // Car parks
     const [showCarparks, setShowCarparks] = useState(false);
     const [includeLongStayCarparks, setIncludeLongStayCarparks] = useState(true);
@@ -128,7 +130,14 @@ export default function MapPage(): JSX.Element {
         <Layout title="Map" description="Interactive map example">
             <main>
                 <div className={styles.grid}>
-                    <div className={styles.drawer}>
+                    <div className={`${styles.drawer} ${drawerOpen ? styles.drawerOpen : ""}`}>
+                        <button
+                            className={styles.drawerClose}
+                            onClick={() => setDrawerOpen(false)}
+                        >
+                            Close ✕
+                        </button>
+
                         <LayerControl
                             label="Car parks"
                             isVisible={showCarparks}
@@ -311,8 +320,15 @@ export default function MapPage(): JSX.Element {
                     >
                         <NavigationControl
                             showZoom
-                            style={{ padding: "20px", zIndex: 10000 }}
+                            style={{ padding: "20px", zIndex: 1000 }}
                         />
+
+                        <button
+                            className={styles.mobileToggle}
+                            onClick={() => setDrawerOpen(true)}
+                        >
+                            ☰
+                        </button>
 
                         {showCarparks && filterCarparkData().map((item, i) => (
                             <MapMarker item={item} type="carpark" onSelect={setSelectedMarker} />
