@@ -7,6 +7,8 @@
 ### Fri 21st 
 * Added Petition data fetching and API (in development, not public currently)
 * Added [Petition Stats](/charts/other/petition-stats) charts and statistics
+* Added Privacy Policy & Terms of Use
+* Cleaned up this changelog
 
 ### Wed 19th
 * Added more Bus APIs
