@@ -9,7 +9,6 @@
     overflow-y: scroll;
     flex-shrink: 0;
     background: white;
-    z-index: 10000;
 }
 
 .mobileToggle {
@@ -36,6 +35,7 @@
         box-shadow: 0 0 20px rgba(0,0,0,0.3);
         transform: translateX(-100%);
         transition: transform 0.3s ease;
+        z-index: 10000;
     }
 
     .drawerOpen {

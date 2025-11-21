@@ -320,7 +320,7 @@ export default function MapPage(): JSX.Element {
                     >
                         <NavigationControl
                             showZoom
-                            style={{ padding: "20px", zIndex: 1000 }}
+                            style={{ padding: "20px", zIndex: 100 }}
                         />
 
                         <button

@@ -9,6 +9,7 @@
 * Added [Petition Stats](/charts/other/petition-stats) charts and statistics
 * Added Privacy Policy & Terms of Use
 * Cleaned up this changelog
+* Revamp home page images
 
 ### Wed 19th
 * Added more Bus APIs
