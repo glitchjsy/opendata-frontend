@@ -1,15 +1,15 @@
 :root {
-    --border-color: #ccc;
+    --select-border-color: #ccc;
 }
 
 [data-theme="dark"] {
-    --border-color: #868686;
+    --select-border-color: #575757;
 }
 
 .select {
     padding: 0.5rem 1rem !important;
     margin-bottom: 0.6rem !important;
-    border: 1px solid var(--border-color) !important;
+    border: 1px solid var(--select-border-color) !important;
     border-radius: 8px !important;
     font-size: 1rem !important;
     width: 100%;
