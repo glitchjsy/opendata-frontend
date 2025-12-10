@@ -1,4 +1,5 @@
 {
     "mapboxToken": "pk.eyJ1IjoiZ2xpdGNoanN5IiwiYSI6ImNtOG9iZm01aTAwcWQyanM5NHN6NXRsemcifQ.GCQil4JVppCX_dIgJE1tMA",
-    "apiUrl": "https://api.opendata.je"
+    "apiUrl": "https://api.opendata.je",
+    "recaptchaSiteKey": "6LeMWScsAAAAAP-KiCNYxmSiz_9rdiM7xlqphI6R"
 }

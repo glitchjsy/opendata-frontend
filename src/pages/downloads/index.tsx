@@ -99,7 +99,7 @@ export default function Downloads() {
                                                 downloadFile(`${DATA_URL}/${file.path}`, getFileName(file.path));
                                             }}
                                         >
-                                            {file.path}
+                                            {getFileName(file.path)}
                                         </a>{" "}
                                         — {formatSize(file.sizeBytes)}
                                     </li>

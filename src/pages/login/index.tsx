@@ -10,6 +10,7 @@ import Button from "@site/src/components/ui/Button";
 export default function Login(): JSX.Element {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const login = async () => {
         try {
@@ -24,50 +25,50 @@ export default function Login(): JSX.Element {
 
             if (!response.ok) {
                 const data = await response.json();
-                alert("ERROR:" + data?.message);
-                throw new Error(`HTTP error! status: ${response.status}`);
+                setError(data?.message || "Failed to login");
+                return;
             }
-
-            const data = await response.json();
             window.location.href = "/";
-            console.log("Login successful:", data);
         } catch (e) {
             console.error("Error logging in:", e);
+            setError(e.message || "Failed to login");
         }
     }
 
     return (
         <Layout title="Login">
             <div className="container" style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "50px" }}>
-                    <div className={styles.authCard}>
-                        <h2 className={styles.title}>Login</h2>
+                <div className={styles.authCard}>
+                    <h2 className={styles.title}>Login</h2>
 
-                        <FormGroup label="Email">
-                            <Input
-                                type="email"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                                required
-                            />
-                        </FormGroup>
+                    <FormGroup label="Email">
+                        <Input
+                            type="email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                            required
+                        />
+                    </FormGroup>
 
-                        <FormGroup label="Password">
-                            <Input
-                                type="password"
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                required
-                            />
-                        </FormGroup>
+                    <FormGroup label="Password">
+                        <Input
+                            type="password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                            required
+                        />
+                    </FormGroup>
 
-                        <Button
-                            className={styles.loginButton}
-                            onClick={() => login()}
-                        >
-                            Login
-                        </Button>
-                    </div>
-                    <p className={styles.regNotSetUp}>Account registration is not yet set up, please get in touch <a href="mailto:luke@glitch.je">via email</a> or <a href="https://linkedin.com/in/lukejwyatt">via LinkedIn</a> to request an account.</p>
+                    {error && <p className={styles.error}>{error}</p>}
+
+                    <Button
+                        className={styles.loginButton}
+                        onClick={() => login()}
+                    >
+                        Login
+                    </Button>
+                </div>
+                <p className={styles.regSignUp}>Don't have an account? <a href="/register">Register here!</a></p>
             </div>
         </Layout>
     );

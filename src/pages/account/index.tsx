@@ -172,6 +172,8 @@ export default function Account() {
                         </>
                     )}
                 </Section>
+
+                <a href={`${config.apiUrl}/auth/logout`}>Log out</a>
             </div>
 
             <CreateModal
