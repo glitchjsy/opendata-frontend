@@ -1,0 +1,55 @@
+.popup {
+    padding: 0 10px;
+    color: black;
+}
+
+.popup p {
+    margin: 0;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.address {
+    font-size: 14px;
+}
+
+.parish {
+    font-size: 14px;
+}
+
+.connectors {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.connector {
+    padding: 5px 10px;
+    border: 1px solid #ececec;
+    display: flex;
+    gap: 10px;
+}
+
+.connector p {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+.connectorStatusLine {
+    width: 6px;
+}
+
+.connectorsTitle {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.spacesDivider {
+    border-top: 1px solid #ececec;
+    margin-top: 10px;
+    padding-bottom: 10px;
+}

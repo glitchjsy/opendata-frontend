@@ -12,6 +12,8 @@ import BusStopPopup from "./components/popups/BusStopPopup";
 import CarparkMarker from "./components/markers/CarparkMarker";
 import CarparkPopup from "./components/popups/CarparkPopup";
 import config from "../config.json";
+import EVChargerMarker from "./components/markers/EVChargerMarker";
+import EVChargerPopup from "./components/popups/EVChargerPopup";
 
 type MapItems = {
     [type in MapItemType]: MapItem;
@@ -24,7 +26,7 @@ export interface MapItem {
     fetchData: () => Promise<any[]>;
 }
 
-export type MapItemType = "eatsafe" | "recycling" | "toilet" | "defib" | "busStop" | "carpark";
+export type MapItemType = "eatsafe" | "recycling" | "toilet" | "defib" | "busStop" | "carpark" | "evCharger";
 
 export const mapItems: MapItems = {
     eatsafe: {
@@ -62,6 +64,12 @@ export const mapItems: MapItems = {
         icon: (item) => <CarparkMarker location={item} />,
         popup: (item) => <CarparkPopup location={item} />,
         fetchData: () => _fetchData("carparks")
+    },
+    evCharger: {
+        label: "EV chargers",
+        icon: (item) => <EVChargerMarker location={item} />,
+        popup: (item) => <EVChargerPopup location={item} />,
+        fetchData: () => _fetchData("ev-stations")
     }
 }
 
@@ -72,7 +80,7 @@ async function _fetchData(route: string): Promise<any[]> {
         if (!response.ok) {
             throw new Error("Response was not ok");
         }
-        
+
         const data = await response.json();
         return data?.results || data;
     } catch (e: any) {

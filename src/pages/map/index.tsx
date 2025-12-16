@@ -61,6 +61,7 @@ export default function MapPage(): JSX.Element {
     const [showBusStops, setShowBusStops] = useState(false);
     const [showDefib, setShowDefib] = useState(false);
     const [showEatsafe, setShowEatsafe] = useState(false);
+    const [showEvChargers, setShowEvChargers] = useState(false);
 
     const [carparkData, setCarparkData] = useState<any[]>([]);
     const [toiletData, setToiletData] = useState<any[]>([]);
@@ -68,6 +69,7 @@ export default function MapPage(): JSX.Element {
     const [recyclingData, setRecyclingData] = useState<any[]>([]);
     const [defibData, setDefibData] = useState<any[]>([]);
     const [eatsafeData, setEatsafeData] = useState<any[]>([]);
+    const [evChargerData, setEvChargerData] = useState<any[]>([]);
 
     useEffect(() => {
         mapItems.carpark.fetchData().then(setCarparkData);
@@ -76,6 +78,7 @@ export default function MapPage(): JSX.Element {
         mapItems.recycling.fetchData().then(setRecyclingData);
         mapItems.defib.fetchData().then(setDefibData);
         mapItems.eatsafe.fetchData().then(setEatsafeData);
+        mapItems.evCharger.fetchData().then(setEvChargerData);
     }, []);
 
     const filterCarparkData = () => {
@@ -310,6 +313,11 @@ export default function MapPage(): JSX.Element {
                             isVisible={showEatsafe}
                             toggleVisibility={() => setShowEatsafe(!showEatsafe)}
                         />
+                        <LayerControl
+                            label="EV chargers"
+                            isVisible={showEvChargers}
+                            toggleVisibility={() => setShowEvChargers(!showEvChargers)}
+                        />
                     </div>
 
                     <ReactMapGL
@@ -348,6 +356,9 @@ export default function MapPage(): JSX.Element {
                         ))}
                         {showEatsafe && eatsafeData.map((item, i) => (
                             <MapMarker item={item} type="eatsafe" onSelect={setSelectedMarker} />
+                        ))}
+                        {showEvChargers && evChargerData.map((item, i) => (
+                            <MapMarker item={item} type="evCharger" onSelect={setSelectedMarker} />
                         ))}
 
                         {selectedMarker && (
